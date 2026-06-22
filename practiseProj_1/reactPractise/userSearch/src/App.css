@@ -1,0 +1,84 @@
+/* In your primary CSS file (e.g., App.css) */
+
+.user-list-container {
+    /* 1. Max Width: Keeps the content readable on very wide screens */
+    max-width: 1200px; 
+    
+    /* 2. Center Content: Centers the container block itself horizontally */
+    margin: 0 auto; 
+    
+    /* 3. Padding: Adds spacing around the edges for aesthetics */
+    padding: 20px;
+    
+    /* 4. Font: Sets a clean, readable font family for the whole section */
+    font-family: Arial, sans-serif;
+    
+    /* 5. Text Alignment: Centers the main title/heading */
+    text-align: center;
+}
+
+.user-list-container h2 {
+    /* Style for the heading */
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* ------------------------------------------------ */
+/* Layout Class (to achieve left-to-right flow) */
+/* ------------------------------------------------ */
+
+.card-grid-wrapper {
+    /* Enables flexbox layout for horizontal arrangement */
+    display: flex; 
+    
+    /* Allows cards to wrap onto the next row if the screen is too small */
+    flex-wrap: wrap; 
+    
+    /* Puts space between the cards */
+    gap: 20px; 
+    
+    /* Distributes space and centers the card rows */
+    justify-content: center; 
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
