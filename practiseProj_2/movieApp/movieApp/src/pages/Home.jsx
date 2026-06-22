@@ -8,7 +8,7 @@ function Home(){
 
     const movies = [
         {id: 1, title: "John Wick", release_date: '2020'},
-        {id: 1, title: "John Wick", release_date: '2020'},
+        {id: 1, title: "sdsc Wick", release_date: '2020'},
         {id: 1, title: "John Wick", release_date: '2020'},
         {id: 1, title: "John Wick", release_date: '2020'}
     ]
@@ -31,7 +31,9 @@ function Home(){
         </form>
 
         <div className="movies-grid">
-          {movies.map(movie => <MovieCard movie={movie}></MovieCard>)}
+          {movies.map(movie => movie.title.toLowerCase().startsWith(searchQuery) && (
+            <MovieCard movie={movie}></MovieCard>)
+            )}
         </div>
         </div>)
 }
