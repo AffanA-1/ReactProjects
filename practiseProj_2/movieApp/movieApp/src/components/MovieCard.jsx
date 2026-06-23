@@ -13,14 +13,14 @@ function MovieCard({movie}){
 
     return <div className="movie-card">
         <div className="movie-poster">
-            <img src={movie.url} alt={movie.title} />
+            <img src={movie.Poster} alt={movie.Title} />
             <div className="movie-overlay">
                 <button className='favorite-btn' onClick={onFavouriteClick}> LIKE </button>
             </div>
         </div>
         <div className="movie-info">
-            <h3>{movie.title}</h3>
-            <p>{movie.release_date}</p>
+            <h3>{movie.Title}</h3>
+            <p>{movie.Year}</p>
         </div>
     </div>
 
