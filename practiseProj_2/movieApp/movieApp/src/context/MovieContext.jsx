@@ -51,22 +51,22 @@ export const MovieProvider = ({children}) => {
     }
 
     const removeFromFavorites = (movieId) => {
-        setFavorites(prev => prev.filter(movie => movie.Id !== movieId))
+        setFavorites(prev => prev.filter(movie => movie.imdbID !== movieId))
     }
 
     //  .find() will return the first value 
     // .some will return True or False
     const isFavorite = (movieId) => {
-        return favorites.some(movie => movie.id === movieId)
+        return favorites.some(movie => movie.imdbID === movieId)
     }
 
 
-    const value = [
+    const value = {
         favorites,
         addToFavorites,
         removeFromFavorites,
         isFavorite
-    ]
+    }
 
 
     return <MovieContext.Provider value={value}>

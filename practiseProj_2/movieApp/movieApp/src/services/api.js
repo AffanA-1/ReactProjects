@@ -43,6 +43,7 @@ export const getSearchResult = async (searchQuery) => {
         if(resonseBody.Response === 'False'){
             throw new Error(`Error Occured: ${resonseBody.Error}`)
         }
+        console.log(resonseBody);
         return resonseBody.Search
     } catch (error) {
         throw error.message

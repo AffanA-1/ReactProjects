@@ -1,3 +1,4 @@
+import { useMovieContext } from '../context/MovieContext'
 import '../css/MovieCard.css'
 
 function MovieCard({movie}){
@@ -7,15 +8,25 @@ function MovieCard({movie}){
     //     <p>{movie.name}</p>
     // </>
 
-    function onFavouriteClick(){
-        alert("click clic")
+
+    const { isFavorite, addToFavorites, removeFromFavorites } = useMovieContext()
+    const favorite = isFavorite(movie.imdbID)
+
+    function onFavouriteClick(e){
+
+        e.preventDefault()
+
+        // if its already marked as favorite, then remove it from the Favorite List
+        if(favorite) removeFromFavorites(movie.imdbID)
+        else addToFavorites(movie)
+
     }
 
     return <div className="movie-card">
         <div className="movie-poster">
             <img src={movie.Poster} alt={movie.Title} />
             <div className="movie-overlay">
-                <button className='favorite-btn' onClick={onFavouriteClick}> LIKE </button>
+                <button className={`favorite-btn ${favorite ? "active" : ""}`} onClick={onFavouriteClick}> LIKE </button>
             </div>
         </div>
         <div className="movie-info">
