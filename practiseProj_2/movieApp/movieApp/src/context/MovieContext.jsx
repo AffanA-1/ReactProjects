@@ -13,13 +13,63 @@ const MovieContext = createContext()
 
 export const useMovieContext = () => useContext(MovieContext);
 
+// All of this below is Step 1
 
 // Why a functino expression and not the functino itself?
 export const MovieProvider = ({children}) => {
 
+    // set State for Favorite
+    // USe LocalStorage to Persist the Data
+    // useEffect to Fetch the LocalStorage and for Rerendering whenever Favorite State changes
+
+    const [favorites, setFavorites] = useState([])
+
+    // Fetch Data from the LocalStorage and set it to the LocalStorage
+    useEffect(()=> {
+        const storedFavs = localStorage.getItem("favorites")
+
+        const settingFavs = async () => {
+            if(storedFavs) setFavorites(JSON.parse(storedFavs))
+        }
+
+        settingFavs()
+    }, [])
+
+    // Set data to localStorage whenever a new data is visible on the Facorites State
+    useEffect(()=>{
+
+        localStorage.setItem('favorites', JSON.stringify(favorites))
+
+        //Runs on the first render
+        //And any time any dependency value changes
+    }, [favorites])
 
 
-    return <MovieContext.Provider>
+    // FUnctions for adding, remvoing and Viewing the favorites 
+    const addToFavorites = (movie) => {
+        setFavorites(prev => [...prev, movie])
+    }
+
+    const removeFromFavorites = (movieId) => {
+        setFavorites(prev => prev.filter(movie => movie.Id !== movieId))
+    }
+
+    //  .find() will return the first value 
+    // .some will return True or False
+    const isFavorite = (movieId) => {
+        return favorites.some(movie => movie.id === movieId)
+    }
+
+
+    const value = [
+        favorites,
+        addToFavorites,
+        removeFromFavorites,
+        isFavorite
+    ]
+
+
+    return <MovieContext.Provider value={value}>
         {children}
     </MovieContext.Provider>
 }
