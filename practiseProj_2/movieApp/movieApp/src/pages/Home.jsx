@@ -68,7 +68,8 @@ function Home(){
     }
 
 
-    return (<div className="home">
+    return (
+        <div className="home">
 
         <form onSubmit={handleSearch} className='search-form'>
             <input type="text" placeholder='Search for movies' className='search-input'
@@ -86,11 +87,10 @@ function Home(){
                 {movies.map(movie => movie.Title.toLowerCase().includes(searchQuery) && (
                                 <MovieCard movie={movie}></MovieCard>)
                     )}
+            </div>
+        }
         </div>
-}
-
-        
-        </div>)
+        )
 }
 
 export default Home
