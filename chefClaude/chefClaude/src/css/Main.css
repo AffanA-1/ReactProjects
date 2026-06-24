@@ -1,0 +1,59 @@
+.ingredient-input {
+    background-color: rgb(197, 197, 197);
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #D1D5DB;
+    padding: 9px 13px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05); 
+
+
+}
+
+.search-btn{
+    font-family: Inter, sans-serif;
+    border-radius: 6px;
+    border: none;
+    background-color: #141413;
+    color: #FAFAF8;
+    width: 300px;
+    font-size: 0.875rem;
+    padding: 9px 13px;
+}
+
+.search-Form > button::before {
+    content: "+";
+    margin-right: 5px;
+}
+
+.search-Form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 500px;
+    gap: 12px
+
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    gap: 10px;
+}
+
+
+.list-items {
+    color: #1b1b13;
+    border-radius: 4px;
+    text-align: left;
+    
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 👈 This pushes the UL to the left side of the form */
+    width: 400px;            /* Matches the width of your search form */
+}
