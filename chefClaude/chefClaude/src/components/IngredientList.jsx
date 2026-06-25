@@ -6,7 +6,8 @@ function IngredientList(props){
                         <ul className="ingredients-list" aria-live="polite">{props.ingredientListItems}</ul>
                     </div>
                     <div className="get-recipe-container">
-                        <div className="recipe-confirm">
+                        {/* attached the Ref Succesfully through the State */}
+                        <div ref={props.sendRef} className="recipe-confirm">
                             <h3>Ready for a recipe?</h3>
                             <p>Generate a recipe from your list of ingredients.</p>
                         </div>
