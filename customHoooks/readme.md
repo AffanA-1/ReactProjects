@@ -1,0 +1,1 @@
+In this Project we will learn how to write cusrtom hooks, how to write reusable components, how to pass states between components and use closures for changing values
