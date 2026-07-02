@@ -9,3 +9,7 @@ export const store = configureStore({
 
 
 // Dong this is enough to COnfigure the Steps
+
+
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
