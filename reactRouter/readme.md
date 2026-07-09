@@ -22,7 +22,7 @@ Features:
 - OUtlet - use inside the Main element in the createBrowserROuter
 
 
-- Query Parameters: ?key=value&key2=value2
+- Query Parameters: ?key=value&key2=value2 = useParamSearch()
 - URL paramters: /:value = useParams()
 
 
