@@ -43,8 +43,24 @@ Topics:
 - HOC vs Render Props vs Custom hooks. (didnt understood it well.)
 
 - Suspense: Load component while the main component is getting rendered and return a promise
+    - Data Fetching (Asyc)
+    - Code Splitting (lazy loading)
+    - React Query: useSuspenseQuery
+    - Error Boundary: Suspense handles the pending state of an async operation, but it doesn't handle the error state. To cover both, wrap your suspending tree in an error boundary
+    - Suspense + use(for promise querying) + Errorboundary
+
+
+
+
 
 - Lazy loading: react.lazy to import the (default jsx functions return only) component only when they are required.
+    - Using Suspense to Load the Other data while Laztloading
+    - Using Authentication based LazyLoading
+
+
+- use() api
+    - Allows for Handling Promise Data and ContextApi data
+
 
 
 
@@ -57,3 +73,29 @@ Scenarios:
     - Fallback Components
 
 - Error Handling: Using Error Boundaries along with Suspense, in situation where the Component fails to Finally Load the data and throws an error, the Whole DOM Shouldnt Crash. To restrict the Crashign Behaviour and to show a specific View, we need to show a Fallback Component, thats where Error Boundaries comes into picture.
+
+
+
+----
+
+
+React LifeCycle:
+- Render
+- Commit the Component
+- useEffect: Update State
+- Re-Render
+- Commit again
+
+------
+
+
+useEffect: Fetch-on-render (in useEffect scenario, the components Render First and then Fetches through UseEffect and then Rerenders)
+Suspense: Render-as-you-fetch (in Suspense, a Render Happens while you Fetch)
+
+
+
+-----
+
+Def:
+- What is Suspense? Allows you to Render Components while It Loads the data - Fetch (data dependency), Async(data dependency), LazyLoad(component Dependency), etc. **Rendering of the Children Component(<suspense> <user /> </suspense>) Is Suspended until the data/Component are Ready**.
+- 
