@@ -89,8 +89,8 @@ React LifeCycle:
 ------
 
 
-useEffect: Fetch-on-render (in useEffect scenario, the components Render First and then Fetches through UseEffect and then Rerenders)
-Suspense: Render-as-you-fetch (in Suspense, a Render Happens while you Fetch)
+- useEffect: Fetch-on-render (in useEffect scenario, the components Render First and then Fetches through UseEffect and then Rerenders)
+- Suspense: Render-as-you-fetch (in Suspense, a Render Happens while you Fetch)
 
 
 
