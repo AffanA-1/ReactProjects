@@ -1,4 +1,4 @@
-##Topics:
+Topics:
 
 - components
     - What kind of Props we can pass:  vairables, states, functions, refs, components
